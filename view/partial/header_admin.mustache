@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unlam Trivia 2023</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="http://localhost/view/css/style.css">
+    <link rel="stylesheet" href="http://localhost/view/css/lobbyAdmin.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f35559;">
+    <a class="navbar-brand" href="#">UNLAM TRIVIA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" id="nuevaPartida"href="/lobbyUsuario">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            {{#usuarioComun}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/lobbyUsuario/agregarSugerencia">Sugerir Pregunta</a>
+                </li>
+            {{/usuarioComun}}
+            {{#editor}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="gestionarPreguntasDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gestionar preguntas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="gestionarPreguntasDropdown">
+                        <a class="dropdown-item" href="/lobbyUsuario/agregarPregunta">Alta Pregunta</a>
+                        <a class="dropdown-item" href="/lobbyUsuario/modificarPregunta">Modificar & Eliminar Preguntas</a>
+                        <a class="dropdown-item" href="/pregunta/listarReportadas">Preguntas Reportadas</a>
+                        <a class="dropdown-item" href="/pregunta/listarSugeridas">Preguntas Sugeridas</a>
+                    </div>
+                </li>
+            {{/editor}}
+            {{#admin}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/lobbyAdmin">Panel Admin</a>
+                </li>
+            {{/admin}}
+            <li class="nav-item">
+                <a class="nav-link" href="#">Acerca de</a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+           <a href="/sesion/cerrarSesion">Cerrar Sesion</a>
+        </span>
+    </div>
+</nav>

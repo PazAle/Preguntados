@@ -1,0 +1,105 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.lobby-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #343a40;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 15px 30px;
+    margin-right: 20px;
+}
+
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #343a40;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.win {
+    color: green;
+}
+
+.loss {
+    color: red;
+}
+.imagenPerfil {
+    width:10em;
+    height:10em;
+    border-radius:150px;
+}
+.containerImgPuntaje{
+    /*display: flex;*/
+    justify-content: space-between;
+    margin-left:27em;
+}
+.nombreUsuario{
+    margin-left: 0.2em;
+}
+
+.navbar{
+    background-color: #f35587 ;
+}
+
+.footerGral{
+    background-color: #14c993ab;
+}
+
+.textoFooter{
+    color: #ffffff;
+}
+.btn-container{
+    display: inline-grid;
+}
+.form-filtro{
+    display: flex;
+    align-items: self-end;
+}
+.boton-filtro{
+    padding: 10px;
+    margin-left: 10px;
+}
+.button{
+    margin-bottom:1em;
+}

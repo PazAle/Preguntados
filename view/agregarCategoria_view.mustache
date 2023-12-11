@@ -1,0 +1,31 @@
+{{>header_logueado}}
+<div class="container">
+    <div class="lobby-container">
+        <h1>Alta de Categoria</h1>
+        <form action="/categoria/procesarCategoria" method="post">
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <input type="text" id="categoria" name="categoria" required>
+            </div>
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="color" id="color" name="color" value="#000000">
+                <span class="color-sample" id="color-sample"></span>
+            </div>
+            {{#errors}}
+                <p style="color:red">{{categoria}}</p>
+            {{/errors}}
+            <button type="submit" class="btn btn-primary" name="add">Enviar</button>
+        </form>
+    </div>
+</div>
+<script>
+    // Actualizar el color de muestra cuando cambie el color seleccionado
+    const colorInput = document.getElementById('color');
+    const colorSample = document.getElementById('color-sample');
+
+    colorInput.addEventListener('input', function() {
+        colorSample.style.backgroundColor = colorInput.value;
+    });
+</script>
+{{> footer}}

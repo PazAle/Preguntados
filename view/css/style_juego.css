@@ -1,0 +1,284 @@
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-image:    url("http://localhost/view/images/fondo.png");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.quiz-box,
+.result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+    0px 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 999;
+}
+
+.quiz-box {
+    width: 550px;
+    background: #fff;
+    border-radius: 5px;
+  /*  opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);*/
+}
+
+.quiz-box header {
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-box header .tituloJuego {
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.quiz-box header .tiempo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+    height: 45px;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    border-radius: 5px;
+    padding: 0 8px;
+}
+
+.quiz-box header .tiempo .texto-tiempo {
+    font-weight: 400;
+    font-size: 14px;
+    user-select: none;
+}
+
+.quiz-box header .tiempo .tiempo-segundos {
+    font-size: 18px;
+    font-weight: 500;
+    background: #343a40;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #343a40;
+    user-select: none;
+
+}
+
+.quiz-box section {
+
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+.quiz-box section .pregunta {
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.quiz-box section .opciones-lista {
+    padding: 20px 0;
+    display: block;
+
+}
+
+.quiz-box section .opciones-lista .opcion {
+    border: 3px solid whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.2),
+    0px 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.6s ease;
+
+}
+/*
+.quiz-box section .opciones-lista .opcion:hover {
+    color: #004085;
+    background: #cce5ff;
+    border-color: #b8daff;
+}*/
+
+.quiz-box section .opciones-lista .opcion:last-child {
+    margin-bottom: 0px;
+}
+
+.opciones-lista .opcion .icon {
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+   line-height: 24px;
+    pointer-events: none;
+}
+.opciones-lista .opcion .icon.tick {
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.opciones-lista .opcion .icon.cross{
+    color: #a42834;
+    border-color: #a42834;
+    background: #f8d7da;
+}
+.opciones-lista .opcion.correcto{
+    color: green;
+    background: #c3e6cb;
+    border: 1px solid #c3e6cb;
+}
+.opciones-lista .opcion.incorrecto {
+    color: red;
+    background: #f5c6cb;
+    border: 1px solid #f5c6cb;
+}
+.opciones-lista .opcion.desabilitar {
+pointer-events: none;
+
+}
+.quiz-box footer{
+    height: 60px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quiz-box footer .total-puntos span{
+display: flex;
+    user-select: none;
+}
+.quiz-box footer .total-puntos span p{
+    font-weight: 500;
+}
+
+footer .siguiente-preg{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    background: limegreen;
+    border-radius: 5px;
+    border: 1px solid limegreen;
+    cursor: pointer;
+    transition: all  0.3s ease;
+}
+footer .siguiente-preg:hover{
+    background:forestgreen ;
+}
+footer .report{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    background: red;
+    border-radius: 5px;
+    border: 1px solid #a42834;
+    cursor: pointer;
+    transition: all  0.3s ease;
+}
+footer .report:hover {
+    background:#a42834 ;
+
+}
+.result-box{
+    background: #fff;
+    width: 450px;
+    padding: 25px 30px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 9999;
+}
+.result-box .icon{
+    font-size: 100px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+.result-box .juego-terminado{
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.result-box .puntajeFinal span{
+    /*display: flex;*/
+}
+
+.result-box .botones{
+    display: flex;
+    margin: 20px 0
+}
+
+.result-box .botones button .restart{
+    color: #fff;
+    background: #007bff;
+}
+
+.result-box .botones button .hover{
+    background: #0263ca;
+}
+.result-box .botones button .quit{
+    color: #007bff;
+}
+.result-box .botones button .quit:hover {
+    color: #fff;
+    background: #007bff;
+}
+
+.result-box .botones button {
+    margin: 0 10px;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+

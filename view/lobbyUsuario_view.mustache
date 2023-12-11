@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost/view/css/style.css">
+    <link rel="stylesheet" href="http://localhost/view/css/style_lobby.css">
+    <title>Lobby</title>
+</head>
+<body>
+{{> header_logueado}}
+<div class="container">
+    <div class="lobby-container">
+        <div class="containerImgPuntaje">
+            {{#datosUsur}}
+                <img src="http://localhost/{{url_imagen}}" class="imagenPerfil">
+                <h1 class="nombreUsuario">{{usuario}}</h1>
+        </div>
+            <h1 class="puntaje">Puntaje Total: {{puntosTotales}}</h1>
+        {{/datosUsur}}
+        <div class="btn-container">
+            <button class="btn btn-primary"><a id="nuevaPartida" href="/partida/nuevaPartida">Empezar a jugar</a>
+            </button>
+            <button class="btn btn-primary"><a id="verRanking" href="/ranking/obtenerRanking">Ver Ranking</a></button>
+        </div>
+
+        <h2>Partidas Jugadas</h2>
+        <table class="table table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Partida</th>
+                <th scope="col">Puntos</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#userPartidas}}
+                <tr>
+                    <td>Partida {{numPartidaDelJugador}}</td>
+                    <td class="win">{{puntosObtenidos}}</td>
+                </tr>
+            {{/userPartidas}}
+            <!-- Add more rows for additional games -->
+            </tbody>
+        </table>
+    </div>
+</div>
+{{> footer}}
+
+

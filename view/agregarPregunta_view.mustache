@@ -1,0 +1,55 @@
+{{> header_logueado}}
+<div class="container">
+    <div class="lobby-container">
+        <h1>Alta de Preguntas</h1>
+        <form action="/pregunta/procesarFormulario" method="post">
+            <div class="form-group">
+                <label for="pregunta">Pregunta:</label>
+                <input type="text" id="pregunta" name="pregunta" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="temas">Categoria:</label>
+                <select class="form-select" name="categoria" id="categoria">
+                {{#categorias}}
+                        <option value="{{categoria_id}}">{{nombre}}</option>
+                {{/categorias}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="opcionA">Opción A:</label>
+                <input type="text" id="opcionA" name="opcionA" class="form-control" required>
+                <input type="radio" id="opcionACorrecta" name="opcionCorrecta" value="A" required>
+                <label for="opcionACorrecta">Correcta</label>
+            </div>
+
+            <div class="form-group">
+                <label for="opcionB">Opción B:</label>
+                <input type="text" id="opcionB" name="opcionB" class="form-control" required>
+                <input type="radio" id="opcionBCorrecta" name="opcionCorrecta" value="B" required>
+                <label for="opcionBCorrecta">Correcta</label>
+            </div>
+
+            <div class="form-group">
+                <label for="opcionC">Opción C:</label>
+                <input type="text" id="opcionC" name="opcionC" class="form-control" required>
+                <input type="radio" id="opcionCCorrecta" name="opcionCorrecta" value="C" required>
+                <label for="opcionCCorrecta">Correcta</label>
+            </div>
+
+            <div class="form-group">
+                <label for="opcionD">Opción D:</label>
+                <input type="text" id="opcionD" name="opcionD" class="form-control" required>
+                <input type="radio" id="opcionDCorrecta" name="opcionCorrecta" value="D" required>
+                <label for="opcionDCorrecta">Correcta</label>
+            </div>
+
+            {{#errors}}
+                <p style="color:red">{{opcionCorrecta}}</p>
+            {{/errors}}
+            <button type="submit" class="btn btn-primary" name="add">Enviar</button>
+        </form>
+    </div>
+</div>
+{{> footer}}

@@ -1,0 +1,17 @@
+{{> header_logueado}}
+<div class="container">
+    <div class="lobby-container">
+        <h1>Buscar y Modificar Preguntas</h1>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Ingrese texto a buscar" id="numeroPregunta">
+        </div>
+        <div class="form-group">
+            <button onclick="buscarPreguntas()" class="btn btn-primary btn-block">Buscar</button>
+        </div>
+        <h2>Preguntas encontradas:</h2>
+        <div class="form-group">
+            <ul id="listaPreguntas"></ul>
+        </div>
+    </div>
+</div>
+{{> footer}}
